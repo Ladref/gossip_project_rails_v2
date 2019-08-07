@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get '/contact',  to: 'contact#index'
   get '/team',  to: 'team#index'
   get '/home', to: 'home#index'
+  get '/home/:id', to: 'home#index'
   root 'welcome#index'
-
+  resources :gossips, except: [:destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
